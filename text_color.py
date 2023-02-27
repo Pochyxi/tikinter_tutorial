@@ -66,12 +66,15 @@ def color_keywords_python(stringa):
         print('----Di seguito la riga ' + str(numero_riga) + ' splittata')
         print('--> ', riga_splittata)
 
+        # condizione per colorare la riga come commento
         if len(riga_splittata) and riga_splittata[0] == '#':
             highlight_text('riga' + str(numero_riga), numero_riga, start_char=1, end_char=len(riga), fg_color='gray')
             continue
 
         for parola in riga_splittata:
             index_parola = riga_splittata.index(parola)
+
+            # Condizioni per colorare le parole
 
             if "(" in parola:
                 index_parentesi = parola.index("(")
